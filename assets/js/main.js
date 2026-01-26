@@ -27,6 +27,11 @@ document.addEventListener('DOMContentLoaded', () => {
             initForm();
         }
         
+        // Tabs de modalidades
+        if (typeof initTabs === 'function') {
+            initTabs();
+        }
+        
         devLog('Todos os módulos inicializados', 'log');
     } catch (error) {
         console.error('Erro ao inicializar:', error);
