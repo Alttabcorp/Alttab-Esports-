@@ -1,0 +1,69 @@
+/* ===================================
+   Identidade & Cultura
+   =================================== */
+
+.identity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Identity Card */
+.identity-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+}
+
+.identity-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Identity Icon */
+.identity-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius-round);
+    font-size: var(--font-size-3xl);
+    color: var(--color-primary);
+    transition: all var(--transition-base);
+}
+
+.identity-card:hover .identity-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Identity Info */
+.identity-card h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.identity-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-light);
+    line-height: 1.7;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .identity-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+}

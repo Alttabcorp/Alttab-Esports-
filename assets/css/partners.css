@@ -1,0 +1,192 @@
+/* ===================================
+   Parceiros & Apoiadores
+   =================================== */
+
+.partners-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Partners Main - Patrocinador Principal */
+.partners-main {
+    margin-bottom: var(--spacing-3xl);
+    text-align: center;
+}
+
+.partners-main h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-lg);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.partner-main-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-2xl);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-width) solid rgba(0, 212, 255, 0.3);
+    border-radius: var(--border-radius-xl);
+    transition: all var(--transition-base);
+}
+
+.partner-main-logo:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-glow);
+}
+
+.partner-logo {
+    width: 200px;
+    height: auto;
+    filter: grayscale(0);
+    transition: all var(--transition-base);
+}
+
+.partner-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 20px var(--color-accent-glow));
+}
+
+.partner-info h4 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.partner-info p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-light);
+}
+
+/* Partners Grid - Parceiros Técnicos */
+.partners-grid {
+    margin-bottom: var(--spacing-3xl);
+    text-align: center;
+}
+
+.partners-grid h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xl);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.partners-logos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.partner-logo-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-lg);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-width-thin) solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-lg);
+    transition: all var(--transition-base);
+    min-height: 120px;
+}
+
+.partner-logo-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--color-accent);
+    transform: translateY(-5px);
+}
+
+.partner-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-gray);
+    opacity: 0.5;
+}
+
+.partner-placeholder i {
+    font-size: var(--font-size-3xl);
+    color: var(--color-accent);
+}
+
+.partner-placeholder span {
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Partners CTA */
+.partners-cta {
+    background: var(--gradient-primary);
+    backdrop-filter: var(--backdrop-blur);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+    text-align: center;
+}
+
+.partners-cta h3 {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-md);
+}
+
+.partners-cta p {
+    font-size: var(--font-size-lg);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-xl);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+    min-width: 200px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .partner-logo {
+        width: 150px;
+    }
+    
+    .partners-logos {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-md);
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+    }
+    
+    .partner-main-logo {
+        padding: var(--spacing-lg);
+    }
+    
+    .partners-cta {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+}

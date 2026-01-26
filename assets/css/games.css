@@ -1,0 +1,87 @@
+/* ===================================
+   Jogos & Modalidades
+   =================================== */
+
+.games-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Game Card */
+.game-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    text-align: center;
+    transition: all var(--transition-base);
+    cursor: pointer;
+}
+
+.game-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Game Icon */
+.game-icon {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto var(--spacing-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-xl);
+    background: rgba(0, 212, 255, 0.1);
+    border: var(--border-width-thick) solid var(--color-accent);
+    overflow: hidden;
+    transition: all var(--transition-base);
+}
+
+.game-card:hover .game-icon {
+    transform: scale(1.1);
+    box-shadow: var(--shadow-glow);
+}
+
+.game-icon img {
+    width: 80%;
+    height: 80%;
+    object-fit: contain;
+}
+
+.game-icon i {
+    font-size: var(--font-size-5xl);
+    color: var(--color-accent);
+}
+
+/* Game Info */
+.game-card h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+    margin-bottom: var(--spacing-sm);
+}
+
+.game-card p {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-light);
+    line-height: 1.6;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .games-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .game-icon {
+        width: 100px;
+        height: 100px;
+    }
+}

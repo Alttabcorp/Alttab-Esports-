@@ -1,0 +1,230 @@
+/* ===================================
+   Media Queries - Responsividade
+   =================================== */
+
+/* Extra Large Devices (Desktop Grande) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .hero-title {
+        font-size: 4rem;
+    }
+    
+    .section-title {
+        font-size: 3rem;
+    }
+}
+
+/* Large Devices (Desktop) */
+@media (max-width: 1200px) {
+    :root {
+        --font-size-5xl: 2.5rem;
+        --font-size-4xl: 2rem;
+        --spacing-3xl: 5rem;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* Medium Devices (Tablet Grande) */
+@media (max-width: 992px) {
+    :root {
+        --font-size-5xl: 2rem;
+        --font-size-4xl: 1.75rem;
+        --font-size-3xl: 1.5rem;
+        --spacing-3xl: 4rem;
+        --spacing-2xl: 3rem;
+    }
+    
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-xl);
+    }
+}
+
+/* Small Devices (Tablet) */
+@media (max-width: 768px) {
+    :root {
+        --font-size-6xl: 2rem;
+        --font-size-5xl: 1.75rem;
+        --font-size-4xl: 1.5rem;
+        --font-size-3xl: 1.25rem;
+        --font-size-2xl: 1.125rem;
+        --spacing-3xl: 3rem;
+        --spacing-2xl: 2.5rem;
+        --spacing-xl: 2rem;
+    }
+    
+    body {
+        font-size: var(--font-size-sm);
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+    
+    .section-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .section-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    /* Botões */
+    .btn {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Cards */
+    .card {
+        padding: var(--spacing-md);
+    }
+    
+    .card-icon {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-sm);
+    }
+}
+
+/* Extra Small Devices (Mobile) */
+@media (max-width: 576px) {
+    :root {
+        --font-size-6xl: 1.75rem;
+        --font-size-5xl: 1.5rem;
+        --font-size-4xl: 1.25rem;
+        --spacing-3xl: 2.5rem;
+        --spacing-2xl: 2rem;
+        --spacing-xl: 1.5rem;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .section {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    h2 {
+        font-size: var(--font-size-3xl);
+    }
+    
+    h3 {
+        font-size: var(--font-size-xl);
+    }
+    
+    /* Hero específico */
+    .hero-content {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-badges {
+        gap: var(--spacing-xs);
+    }
+    
+    .badge {
+        font-size: var(--font-size-xs);
+        padding: 6px var(--spacing-xs);
+    }
+    
+    /* Botões */
+    .hero-buttons {
+        gap: var(--spacing-sm);
+    }
+    
+    .btn {
+        padding: var(--spacing-xs) var(--spacing-sm);
+        font-size: var(--font-size-sm);
+    }
+    
+    /* Cards */
+    .card {
+        padding: var(--spacing-sm);
+    }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .section {
+        padding: var(--spacing-xl) 0;
+    }
+}
+
+/* Dark Mode Support (opcional) */
+@media (prefers-color-scheme: light) {
+    /* Se quiser suportar modo claro no futuro */
+}
+
+/* Redução de movimento para acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .header,
+    .mobile-menu-toggle,
+    .hero-buttons,
+    .contact-form,
+    .footer-social {
+        display: none !important;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+    }
+}
