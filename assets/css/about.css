@@ -21,7 +21,7 @@
 .about-intro p {
     font-size: var(--font-size-lg);
     line-height: 1.8;
-    color: var(--color-gray-light);
+    color: var(--color-gray);
 }
 
 /* Cards */

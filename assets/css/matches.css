@@ -26,7 +26,7 @@
 
 .match-card:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 212, 255, 0.2);
+    box-shadow: var(--shadow-xl);
     border-color: var(--color-accent);
 }
 
@@ -58,7 +58,7 @@
     width: 60px;
     height: 60px;
     object-fit: contain;
-    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
 }
 
 .match-team span {

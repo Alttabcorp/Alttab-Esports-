@@ -1,69 +1,185 @@
 /* ===================================
-   Identidade & Cultura
+   Carrossel de Uniformes - Clean
    =================================== */
 
-.identity-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: var(--spacing-xl);
-    max-width: 1100px;
+.uniform-carousel {
+    position: relative;
+    max-width: 1000px;
     margin: 0 auto;
+    overflow: hidden;
 }
 
-/* Identity Card */
-.identity-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: var(--backdrop-blur);
-    border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+/* Container dos Slides */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    height: 650px;
     border-radius: var(--border-radius-xl);
-    padding: var(--spacing-xl);
-    text-align: center;
-    transition: all var(--transition-base);
+    overflow: hidden;
 }
 
-.identity-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--color-accent);
-    box-shadow: var(--shadow-glow);
-}
-
-/* Identity Icon */
-.identity-icon {
-    width: 80px;
-    height: 80px;
-    margin: 0 auto var(--spacing-lg);
+/* Slide Individual */
+.carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--gradient-accent);
-    border-radius: var(--border-radius-round);
-    font-size: var(--font-size-3xl);
-    color: var(--color-primary);
-    transition: all var(--transition-base);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: var(--backdrop-blur);
+    border: var(--border-width) solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--border-radius-xl);
 }
 
-.identity-card:hover .identity-icon {
-    transform: scale(1.1) rotate(5deg);
+.carousel-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
 }
 
-/* Identity Info */
-.identity-card h3 {
-    font-size: var(--font-size-xl);
-    font-weight: var(--font-weight-bold);
+/* Imagem - Clean e Grande */
+.carousel-slide img {
+    max-width: 90%;
+    max-height: 90%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    border-radius: var(--border-radius-lg);
+}
+
+/* Botões de Navegação - Discretos */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    background: rgba(10, 14, 26, 0.7);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
     color: var(--color-white);
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
 }
 
-.identity-card p {
-    font-size: var(--font-size-base);
-    color: var(--color-gray-light);
-    line-height: 1.7;
+.carousel-btn:hover {
+    opacity: 1;
+    background: rgba(37, 99, 235, 0.8);
+    border-color: var(--color-accent);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-btn-prev {
+    left: var(--spacing-md);
+}
+
+.carousel-btn-next {
+    right: var(--spacing-md);
+}
+
+/* Indicadores - Minimalistas */
+.carousel-indicators {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: var(--spacing-sm);
+    z-index: 2;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: transparent;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    padding: 0;
+    opacity: 0.5;
+}
+
+.indicator:hover {
+    opacity: 0.8;
+    transform: scale(1.2);
+}
+
+.indicator.active {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    opacity: 1;
+    width: 24px;
+    border-radius: 10px;
 }
 
 /* Responsividade */
+@media (max-width: 1024px) {
+    .carousel-container {
+        height: 550px;
+    }
+}
+
 @media (max-width: 768px) {
-    .identity-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+    .carousel-container {
+        height: 500px;
+    }
+    
+    .carousel-slide img {
+        max-width: 85%;
+        max-height: 85%;
+    }
+    
+    .carousel-btn {
+        width: 38px;
+        height: 38px;
+        font-size: var(--font-size-base);
+    }
+    
+    .carousel-btn-prev {
+        left: var(--spacing-sm);
+    }
+    
+    .carousel-btn-next {
+        right: var(--spacing-sm);
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        height: 400px;
+    }
+    
+    .carousel-slide img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        opacity: 0.8;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .indicator.active {
+        width: 20px;
     }
 }

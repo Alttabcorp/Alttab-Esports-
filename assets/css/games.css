@@ -37,7 +37,7 @@
     align-items: center;
     justify-content: center;
     border-radius: var(--border-radius-xl);
-    background: rgba(0, 212, 255, 0.1);
+    background: rgba(37, 99, 235, 0.05);
     border: var(--border-width-thick) solid var(--color-accent);
     overflow: hidden;
     transition: all var(--transition-base);

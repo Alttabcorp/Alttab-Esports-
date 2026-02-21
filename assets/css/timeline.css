@@ -56,7 +56,7 @@
     font-size: var(--font-size-xl);
     color: var(--color-white);
     z-index: 2;
-    box-shadow: 0 0 0 4px var(--color-primary-dark), 0 0 20px rgba(0, 212, 255, 0.5);
+    box-shadow: 0 0 0 4px var(--color-primary-dark), var(--shadow-md);
 }
 
 .timeline-content {
@@ -71,7 +71,7 @@
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: var(--shadow-xl), 0 0 30px rgba(0, 212, 255, 0.2);
+    box-shadow: var(--shadow-xl);
     border-color: var(--color-accent);
 }
 
