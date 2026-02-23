@@ -141,13 +141,3 @@ function getHeaderHeight() {
     return header ? header.offsetHeight : 0;
 }
 
-/**
- * Console log personalizado (apenas em desenvolvimento)
- * @param {*} message - Mensagem a ser exibida
- * @param {String} type - Tipo: 'log', 'warn', 'error'
- */
-function devLog(message, type = 'log') {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        console[type]('🎮 Alttab E-Sports:', message);
-    }
-}

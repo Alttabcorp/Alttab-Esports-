@@ -197,6 +197,22 @@
     /* Se quiser suportar modo claro no futuro */
 }
 
+/* Correção de Overflow Global em Mobile */
+@media (max-width: 768px) {
+    * {
+        max-width: 100%;
+    }
+    
+    img, video, iframe {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .section {
+        overflow-x: hidden;
+    }
+}
+
 /* Redução de movimento para acessibilidade */
 @media (prefers-reduced-motion: reduce) {
     *,

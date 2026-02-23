@@ -59,6 +59,4 @@ function initTabs() {
             devLog(`Tab alterada para: ${gameId}`, 'log');
         });
     });
-    
-    devLog('Sistema de tabs inicializado', 'log');
 }

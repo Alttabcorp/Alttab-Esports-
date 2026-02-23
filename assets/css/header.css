@@ -32,6 +32,8 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
+    width: 100%;
+    max-width: 100%;
 }
 
 /* Logo */
@@ -163,9 +165,14 @@
         height: var(--header-height-mobile);
     }
     
+    .header .container {
+        padding: 0 1rem;
+    }
+    
     .logo {
         height: 60px;
         object-fit: contain;
+        max-width: 200px;
     }
     
     .logo-text {
@@ -174,34 +181,90 @@
     
     .mobile-menu-toggle {
         display: flex;
+        flex-shrink: 0;
+        position: relative;
+        z-index: calc(var(--z-index-header) + 2);
     }
     
     .nav {
         position: fixed;
         top: var(--header-height-mobile);
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: calc(100vh - var(--header-height-mobile));
+        background: #0a0e1a;
         background: rgba(10, 14, 26, 0.98);
-        backdrop-filter: var(--backdrop-blur-strong);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         padding: var(--spacing-2xl) var(--spacing-lg);
         transform: translateX(-100%);
-        transition: transform var(--transition-base);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: calc(var(--z-index-header) - 1);
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        visibility: visible;
+        opacity: 1;
     }
     
     .nav.active {
         transform: translateX(0);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    
+    /* Debug: borda vermelha quando menu ativo */
+    .nav.active::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: var(--color-accent);
+        opacity: 0.5;
     }
     
     .nav-list {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--spacing-lg);
+        width: 100%;
+        height: auto;
     }
     
     .nav-link {
         font-size: var(--font-size-lg);
         padding: var(--spacing-sm) 0;
         width: 100%;
+        display: block;
+        color: var(--color-white);
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .nav-link:hover {
+        color: var(--color-accent);
+    }
+}
+
+/* Mobile Pequeno - Correção Extra */
+@media (max-width: 480px) {
+    .header .container {
+        padding: 0 0.75rem;
+    }
+    
+    .logo {
+        height: 50px;
+        max-width: 150px;
+    }
+    
+    .logo-link {
+        gap: 0.5rem;
+    }
+    
+    .mobile-menu-toggle {
+        width: 28px;
+        height: 22px;
     }
 }

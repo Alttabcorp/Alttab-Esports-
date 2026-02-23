@@ -8,8 +8,6 @@
 function initAnimations() {
     setupScrollAnimations();
     setupParallaxEffect();
-    
-    devLog('Animações inicializadas', 'log');
 }
 
 /**

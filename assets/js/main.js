@@ -5,11 +5,7 @@
 /**
  * Inicializa todas as funcionalidades quando DOM estiver pronto
  */
-document.addEventListener('DOMContentLoaded', () => {
-    // Log de boas-vindas
-    console.log('%c🎮 Alttab E-Sports Team', 'color: #00d4ff; font-size: 20px; font-weight: bold;');
-    console.log('%cWebsite carregado com sucesso!', 'color: #0dcaf0; font-size: 14px;');
-    
+document.addEventListener('DOMContentLoaded', () => {    
     // Inicializa módulos
     try {
         // Navegação e menu
@@ -31,8 +27,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (typeof initTabs === 'function') {
             initTabs();
         }
-        
-        devLog('Todos os módulos inicializados', 'log');
     } catch (error) {
         console.error('Erro ao inicializar:', error);
     }
@@ -45,8 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
  * Manipula eventos de carregamento completo
  */
 window.addEventListener('load', () => {
-    devLog('Página totalmente carregada', 'log');
-    
     // Remove preloader se existir
     const preloader = document.querySelector('.preloader');
     if (preloader) {
@@ -84,66 +76,6 @@ document.addEventListener('contextmenu', (e) => {
 });
 
 /**
- * Easter egg - Konami Code (opcional, diversão)
- */
-(function setupKonamiCode() {
-    const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-    let konamiIndex = 0;
-    
-    document.addEventListener('keydown', (e) => {
-        if (e.key === konamiCode[konamiIndex]) {
-            konamiIndex++;
-            
-            if (konamiIndex === konamiCode.length) {
-                activateEasterEgg();
-                konamiIndex = 0;
-            }
-        } else {
-            konamiIndex = 0;
-        }
-    });
-    
-    function activateEasterEgg() {
-        console.log('%c🏆 ACHIEVEMENT UNLOCKED!', 'color: gold; font-size: 24px; font-weight: bold;');
-        console.log('%cVocê descobriu o Easter Egg do Alttab E-Sports!', 'color: #00d4ff; font-size: 16px;');
-        
-        // Efeito visual opcional
-        document.body.style.animation = 'glow 2s ease-in-out';
-        setTimeout(() => {
-            document.body.style.animation = '';
-        }, 2000);
-    }
-})();
-
-/**
- * Detecta se usuário está offline
- */
-window.addEventListener('offline', () => {
-    console.warn('⚠️ Você está offline');
-    // Poderia exibir uma mensagem ao usuário
-});
-
-window.addEventListener('online', () => {
-    console.log('✅ Conexão restaurada');
-});
-
-/**
- * Performance monitoring (opcional)
- */
-if (window.performance && window.performance.timing) {
-    window.addEventListener('load', () => {
-        setTimeout(() => {
-            const perfData = window.performance.timing;
-            const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
-            const connectTime = perfData.responseEnd - perfData.requestStart;
-            const renderTime = perfData.domComplete - perfData.domLoading;
-            
-            devLog(`Performance: Load=${pageLoadTime}ms, Connect=${connectTime}ms, Render=${renderTime}ms`, 'log');
-        }, 0);
-    });
-}
-
-/**
  * Service Worker (opcional, para PWA)
  */
 if ('serviceWorker' in navigator) {
@@ -161,5 +93,4 @@ window.AlttabEsports = {
     toggleClass,
     fadeIn,
     fadeOut,
-    devLog
 };

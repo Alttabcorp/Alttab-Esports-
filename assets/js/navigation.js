@@ -10,8 +10,6 @@ function initNavigation() {
     setupMobileMenu();
     highlightActiveSection();
     handleHeaderScroll();
-    
-    devLog('Navegação inicializada', 'log');
 }
 
 /**
@@ -51,10 +49,15 @@ function setupMobileMenu() {
     const menuToggle = document.querySelector('.mobile-menu-toggle');
     const nav = document.querySelector('.nav');
     
-    if (!menuToggle || !nav) return;
-    
+    if (!menuToggle || !nav) {
+        console.error('❌ Elementos do menu não encontrados!');
+        return;
+    }
+        
     // Toggle menu ao clicar no botão
-    menuToggle.addEventListener('click', () => {
+    menuToggle.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
         toggleMobileMenu();
     });
     
@@ -82,6 +85,8 @@ function toggleMobileMenu() {
     const body = document.body;
     
     if (!menuToggle || !nav) return;
+    
+    const isActive = nav.classList.contains('active');
     
     menuToggle.classList.toggle('active');
     nav.classList.toggle('active');
