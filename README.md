@@ -1,187 +1,133 @@
-# 🎮 Alttab E-Sports Team - Landing Page
+# 🎮 Alttab E-Sports Team
 
-Landing page institucional do **Alttab E-Sports Team**, time competitivo amador focado em excelência técnica e crescimento no cenário de e-sports.
+<div align="center">
 
-![Status](https://img.shields.io/badge/status-ativo-success)
-![Versão](https://img.shields.io/badge/versão-2.0.0-blue)
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![Alttab E-Sports Logo](assets/images/logo/alttab-esports-logo.png)
 
----
+[![Website](https://img.shields.io/badge/Website-Online-00d1ff)](https://alttabcorp.github.io/Alttab-Esports-/)
+[![Status](https://img.shields.io/badge/Status-Ativo-success)](https://alttabcorp.github.io/Alttab-Esports-/)
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2)](https://discord.com/invite/QUner9XTkn)
 
-## 📋 Sobre o Projeto
+**Rumo ao Topo** | *Competitividade, Organização e Excelência*
 
-Landing page desenvolvida em **HTML5**, **CSS3** e **JavaScript Vanilla** (sem frameworks), com foco em:
-- Performance
-- Responsividade
-- Acessibilidade
-- SEO otimizado com Schema.org
-- Experiência do usuário moderna
+</div>
 
 ---
 
-## ✨ Funcionalidades
+## 🎯 Sobre o Time
 
-### 🎯 Novidades da Versão 2.0
+O **Alttab E-Sports Team** é uma organização competitiva amadora fundada em **2023**, com sede em **Cajazeiras, PB**. Focamos em excelência técnica, disciplina estratégica e crescimento contínuo no cenário de e-sports.
 
-- ✅ **Hero Section Melhorado**: Slogan impactante "Rumo ao Topo" com design moderno
-- ✅ **Timeline de Conquistas**: Seção "Nosso Legado" com marcos históricos do time
-- ✅ **Match Schedule**: Widget de próximas partidas com status e links para streams
-- ✅ **Player Cards Aprimorados**: Estatísticas (K/D, Win Rate), quotes e redes sociais
-- ✅ **Seção de Parceiros Expandida**: Grid de logos e call-to-action melhorado
-- ✅ **Newsletter**: Formulário de inscrição no footer com incentivo
-- ✅ **Sistema de Badges**: LIVE, UPCOMING, NEW, FEATURED com animações
-- ✅ **SEO Estruturado**: Schema.org metadata para melhor indexação
+Mantido pela **[Alttab Corp](https://www.alttabcorp.com.br)**, oferecemos estrutura profissional para desenvolvimento de talentos locais no cenário competitivo nacional.
 
-### 📱 Recursos Principais
+### 💡 Missão e Valores
 
-- ✅ Design moderno e responsivo (Mobile First)
-- ✅ Navegação suave (Smooth Scroll)
-- ✅ Menu mobile interativo
-- ✅ Animações ao fazer scroll
-- ✅ Formulário de contato com validação
-- ✅ Seções institucionais completas
-- ✅ Integração com redes sociais
-- ✅ Cross-browser compatible
+Desenvolver talentos locais e competir em alto nível, mostrando que **excelência não tem fronteiras geográficas**.
+
+- 🏅 **Excelência Técnica** - Melhoria contínua de habilidades
+- 🤝 **Espírito de Equipe** - Vitórias construídas coletivamente  
+- 📈 **Crescimento Contínuo** - Cada partida é aprendizado
+- ⚖️ **Fair Play** - Competição ética e respeitosa
 
 ---
 
-## 🚀 Como Usar
+## 🎮 Modalidades
 
-### 1. Adicione as Imagens
+### 🏆 League of Legends (Principal)
 
-Coloque as imagens necessárias nas pastas correspondentes:
+Time competitivo ativo no cenário amador, focado em:
+- Sincronização de equipe e comunicação
+- Macro e micro gameplay avançados
+- Análise de meta e estratégias
+- Participação em campeonatos regionais
 
-**Obrigatórias:**
-- `assets/images/logo/alttab-esports-logo.png` - Logo do time
-- `assets/images/players/avatar-*.png` - 5 avatares dos jogadores
-- `assets/images/games/*.png` - Logos dos jogos (LoL, Valorant, CS:GO)
+### 🎯 Em Desenvolvimento
 
-### 2. Abra no Navegador
-
-Simplesmente abra o arquivo `index.html` em seu navegador ou use um servidor local:
-
-```bash
-# Python 3
-python -m http.server 8000
-
-# Node.js (http-server)
-npx http-server
-```
-
-Acesse: `http://localhost:8000`
+- **Valorant** - Tático 5v5
+- **CS:GO/CS2** - FPS competitivo
+- **Mobile Legends** - Cenário mobile
 
 ---
 
-## 🎨 Personalização
+## 👥 Line-up
 
-### Cores
-Edite as variáveis CSS em `assets/css/variables.css`
+### League of Legends
 
-### Conteúdo
-Edite diretamente no `index.html` nas seções correspondentes
+Roster formado por jogadores comprometidos com mentalidade competitiva:
 
-### Formulário de Contato
-Configure o envio em `assets/js/form.js` (opções: FormSubmit, FormSpree ou backend próprio)
+| Posição | Jogador | Streamer |
+|---------|---------|----------|
+| 🛡️ Top Lane | Bodescorp | [Saiba mais](https://alttabcorp.github.io/bodescorp_stream/) |
+| 🐾 Jungle | Pyro | - |
+| ⚡ Mid Lane | Cipher | - |
+| 🎯 ADC | Vortex | - |
+| 💚 Support | Aurora | - |
 
----
-
-## 📱 Responsividade
-
-- ✅ Desktop (1920x1080, 1366x768)
-- ✅ Tablet (768x1024)
-- ✅ Mobile (375x667, 414x896)
-
----
-
-## 🌐 Deploy
-
-**Opções recomendadas:**
-- GitHub Pages
-- Netlify (deploy automático)
-- Vercel
+**Treinos focados em:**
+- Coordenação (calls, rotações, visão)
+- Mecânica individual (farming, combate)
+- Análise estratégica (draft, objetivos)
+- Comunicação efetiva (shot-calling)
 
 ---
 
-## 🛠️ Tecnologias
+## 🛠️ Estrutura
 
-- HTML5
-- CSS3 (Grid, Flexbox, Custom Properties)
-- JavaScript Vanilla (ES6+)
-- Font Awesome (ícones)
-- Google Fonts (Inter, Roboto)
+### O Que Oferecemos
 
----
+- ✅ Suporte técnico e infraestrutura para treinos
+- ✅ Horários organizados e calendário de campeonatos
+- ✅ Análise de performance e revisão de partidas
+- ✅ Presença digital e divulgação de conquistas
+- ✅ Networking com comunidade e outros times
 
-## 📂 Estrutura de Arquivos
+### 🏢 Apoio Institucional
 
-```
-Alttab-Esports-/
-├── index.html                    # Página principal
-├── assets/
-│   ├── css/
-│   │   ├── reset.css            # Reset CSS
-│   │   ├── variables.css        # Variáveis CSS
-│   │   ├── global.css           # Estilos globais
-│   │   ├── header.css           # Navegação
-│   │   ├── hero.css             # Seção Hero
-│   │   ├── timeline.css         # Timeline de conquistas (NOVO)
-│   │   ├── matches.css          # Widget de partidas (NOVO)
-│   │   ├── about.css            # Sobre
-│   │   ├── lineup.css           # Line-up
-│   │   ├── games.css            # Jogos
-│   │   ├── identity.css         # Identidade
-│   │   ├── partners.css         # Parceiros
-│   │   ├── contact.css          # Contato
-│   │   ├── footer.css           # Footer com newsletter
-│   │   └── responsive.css       # Media queries
-│   ├── js/
-│   │   ├── main.js              # Inicialização
-│   │   ├── navigation.js        # Menu e navegação
-│   │   ├── animations.js        # Animações scroll
-│   │   ├── form.js              # Validação de formulários
-│   │   └── utils.js             # Funções utilitárias
-│   └── images/
-│       ├── logo/                # Logos
-│       ├── players/             # Avatares dos jogadores
-│       ├── games/               # Logos dos jogos
-│       └── hero/                # Imagens do hero
-├── analise-times-profissionais.md  # Análise de referências
-└── README.md                       # Este arquivo
-```
+**[Alttab Corp](https://www.alttabcorp.com.br)** - Empresa de tecnologia que fundou e mantém a estrutura do time, fornecendo suporte técnico, administrativo e financeiro.
 
 ---
 
-## 🎨 Seções do Site
+## 🤝 Junte-se ao Time
 
-1. **Hero**: Apresentação principal com slogan impactante
-2. **Timeline**: Marcos históricos do time
-3. **Match Schedule**: Próximas partidas e streams
-4. **Sobre**: Missão, visão e valores
-5. **Line-up**: Cards dos jogadores com estatísticas
-6. **Jogos**: Modalidades competitivas
-7. **Identidade**: Cultura e compromissos
-8. **Parceiros**: Patrocinadores e apoiadores
-9. **Contato**: Formulário e informações
-10. **Footer**: Newsletter, links e redes sociais
-- Google Fonts (Inter, Roboto)
+### 🔍 Recrutamento
+
+Buscamos talentos comprometidos com:
+
+- Paixão por e-sports competitivos
+- Disponibilidade para treinos regulares
+- Mentalidade de equipe e respeito
+- Nível competitivo (Bronze+ em LoL)
+
+📧 **Contato**: alttabcorp@gmail.com.br
+
+### 💙 Comunidade
+
+🌐 **Website**: [Alttab-Esports](https://alttabcorp.github.io/Alttab-Esports-/)  
+💬 **Discord**: [Entre no servidor](https://discord.com/invite/QUner9XTkn)  
+📺 **Twitch**: [bodescorp](https://alttabcorp.github.io/bodescorp_stream/) (Top Laner oficial)  
+📸 **Instagram**: [-]()
 
 ---
 
-## 📞 Contato
+## 💼 Parceiros
 
-- **E-mail:** esports@alttabcorp.com.br
-- **Website:** [https://www.alttabcorp.com.br](https://www.alttabcorp.com.br)
-- **Instagram:** [@alttabcorp](https://www.instagram.com/alttabcorp)
+Estamos abertos a parcerias que compartilhem nossos valores. Interessado em investir no cenário regional?
+
+📧 **Contato Comercial**: alttabcorp@gmail.com.br
+
+---
+
+## 📍 Localização
+
+**Cajazeiras, PB - Brasil**  
+Interior da Paraíba • Região Nordeste
 
 ---
 
 <div align="center">
 
-**🎮 Alttab E-Sports Team**  
-*Competitividade, Organização e Excelência*
+**Alttab E-Sports Team** | *Competitividade • Organização • Excelência*
 
-© 2024 Alttab Corp. Todos os direitos reservados.
+© 2023-2026 **[Alttab Corp](https://www.alttabcorp.com.br)**. Todos os direitos reservados.
 
 </div>

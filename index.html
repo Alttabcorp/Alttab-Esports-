@@ -212,11 +212,11 @@
                 <div class="lineup-grid">
                     <div class="player-card animate-on-scroll">
                         <div class="player-avatar">
-                            <img src="assets/images/players/avatar-zephyr.png" alt="Avatar Zephyr"
+                            <img src="assets/images/players/avatar-bodescorp.png" alt="Avatar Bodescorp"
                                 onerror="this.src='assets/images/decorative/placeholder.svg'">
                         </div>
                         <div class="player-info">
-                            <h3 class="player-nickname">Zephyr</h3>
+                            <h3 class="player-nickname">Bodescorp</h3>
                             <p class="player-role"><i class="fas fa-shield-alt"></i> Top Lane</p>
                         </div>
                     </div>
@@ -354,28 +354,83 @@
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Nossos Streams</h2>
-                <p class="section-subtitle">Acompanhe nossas lives no Twitch</p>
+                <p class="section-subtitle">Acompanhe nossas lives e assista nossos jogadores em ação</p>
             </div>
 
-            <div style="max-width: 700px; margin: 0 auto;">
-                <div class="match-card animate-on-scroll" style="padding: var(--spacing-xl); text-align: center;">
-                    <div style="margin-bottom: var(--spacing-lg);">
-                        <i class="fab fa-twitch" style="font-size: 3rem; color: #9146FF;"></i>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="match-card animate-on-scroll" style="padding: var(--spacing-2xl);">
+                    <!-- Header do Card -->
+                    <div style="display: flex; align-items: center; gap: var(--spacing-xl); margin-bottom: var(--spacing-xl); flex-wrap: wrap; justify-content: center;">
+                        <div style="text-align: center;">
+                            <div style="width: 120px; height: 120px; margin: 0 auto var(--spacing-md); border-radius: 50%; border: 3px solid var(--color-accent); padding: 5px; background: rgba(0, 209, 255, 0.1);">
+                                <img src="assets/images/players/avatar-bodescorp.png" alt="Bodescorp" 
+                                     style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;"
+                                     onerror="this.src='assets/images/decorative/placeholder.svg'">
+                            </div>
+                            <div style="display: flex; align-items: center; justify-content: center; gap: var(--spacing-xs); margin-bottom: var(--spacing-xs);">
+                                <i class="fas fa-shield-alt" style="color: var(--color-accent); font-size: 1.2rem;"></i>
+                                <span style="color: var(--color-gray); font-size: var(--font-size-sm); font-weight: 600;">TOP LANE</span>
+                            </div>
+                            <h3 style="font-size: var(--font-size-2xl); color: var(--color-white); font-weight: 700; margin-bottom: var(--spacing-xs);">
+                                Bodescorp
+                            </h3>
+                            <span class="badge" style="display: inline-flex; gap: 5px; padding: 4px 12px; font-size: var(--font-size-xs);">
+                                <i class="fas fa-users"></i> Jogador Oficial
+                            </span>
+                        </div>
+                        
+                        <div style="flex: 1; min-width: 280px;">
+                            <div style="display: flex; align-items: center; gap: var(--spacing-md); margin-bottom: var(--spacing-md);">
+                                <i class="fab fa-twitch" style="font-size: 2.5rem; color: #9146FF;"></i>
+                                <div>
+                                    <p style="color: var(--color-gray); font-size: var(--font-size-sm); margin-bottom: 4px;">STREAMER</p>
+                                    <h4 style="font-size: var(--font-size-xl); color: var(--color-white); font-weight: 700;">bodescorp</h4>
+                                </div>
+                            </div>
+                            <p style="color: var(--color-gray); line-height: 1.6; margin-bottom: var(--spacing-lg);">
+                                Assista treinos diários, ranked games, análises de partidas e lives interativas com nosso Top Laner. 
+                                Conteúdo focado em gameplay, estratégia e crescimento competitivo.
+                            </p>
+                            
+                            <!-- Stats destaque -->
+                            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--spacing-md); margin-bottom: var(--spacing-lg); text-align: center;">
+                                <div style="padding: var(--spacing-sm); background: rgba(0, 209, 255, 0.05); border-radius: var(--border-radius-md); border: 1px solid rgba(0, 209, 255, 0.2);">
+                                    <i class="fas fa-calendar-alt" style="color: var(--color-accent); margin-bottom: 4px;"></i>
+                                    <p style="color: var(--color-gray); font-size: var(--font-size-xs);">Lives Regulares</p>
+                                </div>
+                                <div style="padding: var(--spacing-sm); background: rgba(0, 209, 255, 0.05); border-radius: var(--border-radius-md); border: 1px solid rgba(0, 209, 255, 0.2);">
+                                    <i class="fas fa-comment-dots" style="color: var(--color-accent); margin-bottom: 4px;"></i>
+                                    <p style="color: var(--color-gray); font-size: var(--font-size-xs);">Chat Interativo</p>
+                                </div>
+                                <div style="padding: var(--spacing-sm); background: rgba(0, 209, 255, 0.05); border-radius: var(--border-radius-md); border: 1px solid rgba(0, 209, 255, 0.2);">
+                                    <i class="fas fa-gamepad" style="color: var(--color-accent); margin-bottom: 4px;"></i>
+                                    <p style="color: var(--color-gray); font-size: var(--font-size-xs);">High Elo</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3
-                        style="font-size: var(--font-size-xl); color: var(--color-white); margin-bottom: var(--spacing-sm);">
-                        bodescorp</h3>
-                    <p style="color: var(--color-gray); margin-bottom: var(--spacing-lg);">Assista treinos, competições
-                        e lives interativas</p>
-                    <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap;">
-                        <a href="https://www.twitch.tv/bodescorp" target="_blank" class="btn btn-primary">
+                    
+                    <!-- Botões de Ação -->
+                    <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; padding-top: var(--spacing-lg); border-top: 1px solid rgba(0, 209, 255, 0.2);">
+                        <a href="https://www.twitch.tv/bodescorp" target="_blank" class="btn btn-primary" style="min-width: 200px;">
                             <i class="fab fa-twitch"></i> Seguir no Twitch
                         </a>
-                        <a href="https://alttabcorp.github.io/bodescorp_stream/" target="_blank"
-                            class="btn btn-secondary">
+                        <a href="https://alttabcorp.github.io/bodescorp_stream/" target="_blank" class="btn btn-secondary" style="min-width: 200px;">
                             <i class="fas fa-bell"></i> Saiba mais
                         </a>
                     </div>
+                </div>
+                
+                <!-- Call to Action para outros streamers -->
+                <div style="text-align: center; margin-top: var(--spacing-xl); padding: var(--spacing-xl); background: rgba(255, 255, 255, 0.02); border-radius: var(--border-radius-lg); border: 1px solid rgba(0, 209, 255, 0.1);">
+                    <i class="fas fa-video" style="font-size: 2rem; color: var(--color-accent); margin-bottom: var(--spacing-sm);"></i>
+                    <p style="color: var(--color-gray); margin-bottom: var(--spacing-md);">
+                        Outros jogadores do time também fazem lives ocasionalmente. 
+                        <br>Entre no nosso Discord para ficar por dentro!
+                    </p>
+                    <a href="https://discord.com/invite/QUner9XTkn" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-discord"></i> Entrar no Discord
+                    </a>
                 </div>
             </div>
         </div>
