@@ -2,9 +2,34 @@
    Seção Sobre
    =================================== */
 
+/* Brasão decorativo na seção */
+#about {
+    position: relative;
+    overflow: hidden;
+}
+
+#about::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background-image: url('../images/icons/brasao1_semfundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 10s ease-in-out infinite;
+}
+
 .about-content {
     max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 .about-intro {
@@ -45,10 +70,79 @@
     color: var(--color-gray-light);
 }
 
+/* Apoio Institucional */
+.institutional-support {
+    text-align: center;
+    margin-top: var(--spacing-2xl);
+    padding-top: var(--spacing-2xl);
+    border-top: 1px solid rgba(0, 209, 255, 0.2);
+    position: relative;
+}
+
+/* Pequenos brasões decorativos nas laterais */
+.institutional-support::before,
+.institutional-support::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    background-image: url('../images/icons/brasao1_semfundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.institutional-support::before {
+    left: 10%;
+}
+
+.institutional-support::after {
+    right: 10%;
+}
+
+@media (max-width: 768px) {
+    .institutional-support::before,
+    .institutional-support::after {
+        display: none;
+    }
+}
+
+.institutional-label {
+    color: var(--color-gray);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: var(--font-weight-semibold);
+}
+
+.institutional-logo {
+    max-width: 200px;
+    height: auto;
+    opacity: 0.8;
+    transition: all var(--transition-base);
+    filter: brightness(1.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.institutional-logo:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
 /* Responsividade */
 @media (max-width: 768px) {
     .about-cards {
         grid-template-columns: 1fr;
         gap: var(--spacing-md);
+    }
+    
+    .institutional-logo {
+        max-width: 160px;
     }
 }

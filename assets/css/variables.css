@@ -4,34 +4,41 @@
 
 :root {
     /* === CORES === */
-    /* Cores Primárias - Tons profissionais e sóbrios */
-    --color-primary: #0a0e1a;
-    --color-primary-dark: #070b14;
-    --color-primary-darker: #03050a;
+    /* Cores Primárias - Tons modernos e acolhedores */
+    --color-primary: #0a0f1d;
+    --color-primary-dark: #080c16;
+    --color-primary-darker: #060912;
+    --color-primary-light: #111827;
     
-    /* Cores de Destaque - Azul corporativo */
-    --color-accent: #2563eb;
-    --color-accent-light: #3b82f6;
-    --color-accent-glow: rgba(37, 99, 235, 0.3);
-    --color-accent-dark: #1e40af;
+    /* Cores de Destaque - Ciano vibrante e confiável */
+    --color-accent: #00d1ff;
+    --color-accent-light: #33dcff;
+    --color-accent-glow: rgba(0, 209, 255, 0.4);
+    --color-accent-dark: #00a8cc;
     
-    /* Cores Neutras */
+    /* Cores Neutras - Mais claras e amigáveis */
     --color-white: #ffffff;
-    --color-gray-light: #e5e7eb;
+    --color-gray-light: #dce1e7;
     --color-gray: #9ca3af;
-    --color-gray-dark: #374151;
+    --color-gray-dark: #4b5563;
     --color-black: #000000;
     
     /* Cores de Status */
     --color-success: #10b981;
     --color-error: #ef4444;
     --color-warning: #f59e0b;
+    --color-info: #00d1ff;
     
-    /* Gradientes - Mais sutis e profissionais */
-    --gradient-primary: linear-gradient(135deg, #0a0e1a 0%, #070b14 100%);
-    --gradient-accent: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-    --gradient-overlay: linear-gradient(180deg, rgba(10, 14, 26, 0.95) 0%, rgba(3, 5, 10, 0.98) 100%);
-    --gradient-text: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    /* Gradientes - Modernos e sutis */
+    --gradient-primary: linear-gradient(135deg, #0a0f1d 0%, #111827 100%);
+    --gradient-accent: linear-gradient(135deg, #00d1ff 0%, #00a8cc 100%);
+    --gradient-overlay: linear-gradient(180deg, rgba(10, 15, 29, 0.4) 0%, rgba(10, 15, 29, 0.65) 50%, rgba(10, 15, 29, 0.8) 100%);
+    --gradient-text: linear-gradient(135deg, #00d1ff 0%, #33dcff 100%);
+    --gradient-card: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    
+    /* Gradientes de fundo acolhedores */
+    --gradient-section-light: linear-gradient(180deg, #0f1419 0%, #0a0f1d 100%);
+    --gradient-section-dark: linear-gradient(180deg, #0a0f1d 0%, #060912 100%);
     
     /* === TIPOGRAFIA === */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -68,8 +75,8 @@
     /* === LAYOUT === */
     --max-width-container: 1200px;
     --max-width-content: 800px;
-    --header-height: 80px;
-    --header-height-mobile: 70px;
+    --header-height: 110px;
+    --header-height-mobile: 80px;
     
     /* === BORDAS === */
     --border-radius-sm: 4px;
@@ -88,14 +95,25 @@
     --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.15);
     --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.2);
     --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 10px rgba(37, 99, 235, 0.15);
-    --shadow-glow-strong: 0 0 15px rgba(37, 99, 235, 0.25);
+    --shadow-glow: 0 0 20px rgba(0, 209, 255, 0.3);
+    --shadow-glow-strong: 0 0 30px rgba(0, 209, 255, 0.5);
+    --shadow-accent: 0 4px 20px rgba(0, 209, 255, 0.2);
+    --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.3);
     
     /* === TRANSIÇÕES === */
     --transition-fast: 0.2s ease;
     --transition-base: 0.3s ease;
     --transition-slow: 0.5s ease;
     --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-elastic: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    
+    /* === ANIMAÇÕES === */
+    --animation-duration-fast: 0.3s;
+    --animation-duration-base: 0.5s;
+    --animation-duration-slow: 0.8s;
+    --animation-ease: ease-out;
+    --animation-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
     
     /* === Z-INDEX === */
     --z-index-dropdown: 100;
@@ -107,4 +125,105 @@
     /* === BACKDROP === */
     --backdrop-blur: blur(10px);
     --backdrop-blur-strong: blur(20px);
+}
+/* ===================================
+   Animações Globais
+   =================================== */
+
+/* Fade In suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide Up amigável */
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide In from Left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Slide In from Right */
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Scale In suave */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Glow pulsante */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(0, 209, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 30px rgba(0, 209, 255, 0.6);
+    }
+}
+
+/* Float suave */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Rotate suave */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Shimmer efeito */
+@keyframes shimmer {
+    0% {
+        background-position: -1000px 0;
+    }
+    100% {
+        background-position: 1000px 0;
+    }
 }

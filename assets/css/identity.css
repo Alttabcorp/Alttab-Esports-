@@ -2,11 +2,35 @@
    Carrossel de Uniformes - Clean
    =================================== */
 
+/* Brasão decorativo na seção */
+#uniformes {
+    position: relative;
+    overflow: hidden;
+}
+
+#uniformes::before {
+    content: '';
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 450px;
+    height: 450px;
+    background-image: url('../images/icons/brasao1_semfundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.04;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 14s ease-in-out infinite;
+}
+
 .uniform-carousel {
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
     overflow: hidden;
+    z-index: 1;
 }
 
 /* Container dos Slides */

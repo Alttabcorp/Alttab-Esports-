@@ -1,0 +1,256 @@
+/* ===================================
+   Efeitos Decorativos Amigáveis
+   =================================== */
+
+/* Círculos decorativos flutuantes */
+.section::before,
+.section::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section::before {
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(0, 209, 255, 0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.section::after {
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(0, 209, 255, 0.1) 0%, transparent 70%);
+    bottom: -150px;
+    left: -150px;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+/* Efeito de brilho pulsante em elementos importantes */
+.glow-pulse {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* Linha decorativa animada */
+.decorative-line {
+    position: relative;
+    overflow: hidden;
+}
+
+.decorative-line::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient-accent);
+    transform: translateX(-100%);
+    animation: slideInLine 1.5s ease-out forwards;
+}
+
+@keyframes slideInLine {
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Partículas decorativas */
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--color-accent);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: particleFloat 10s linear infinite;
+}
+
+.particle:nth-child(2) { animation-delay: 2s; }
+.particle:nth-child(3) { animation-delay: 4s; }
+.particle:nth-child(4) { animation-delay: 6s; }
+.particle:nth-child(5) { animation-delay: 8s; }
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) translateX(0);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.6;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        transform: translateY(-100px) translateX(100px);
+        opacity: 0;
+    }
+}
+
+/* Efeito de hover suave com escala */
+.hover-lift {
+    transition: all var(--transition-smooth);
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Border animado */
+.animated-border {
+    position: relative;
+    background: linear-gradient(var(--color-primary), var(--color-primary)) padding-box,
+                var(--gradient-accent) border-box;
+    border: 2px solid transparent;
+    border-radius: var(--border-radius-lg);
+}
+
+.animated-border::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: var(--gradient-accent);
+    border-radius: var(--border-radius-lg);
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    z-index: -1;
+    filter: blur(10px);
+}
+
+.animated-border:hover::before {
+    opacity: 0.8;
+}
+
+/* Efeito de texto brilhante */
+.text-glow {
+    text-shadow: 0 0 20px rgba(0, 209, 255, 0.5),
+                 0 0 40px rgba(0, 209, 255, 0.3);
+}
+
+/* Efeito de hover para ícones */
+.icon-hover {
+    transition: all var(--transition-smooth);
+}
+
+.icon-hover:hover {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--color-accent);
+    filter: drop-shadow(0 0 10px var(--color-accent));
+}
+
+/* Loading spinner amigável */
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(0, 209, 255, 0.1);
+    border-top-color: var(--color-accent);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Efeito de onda */
+.wave-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.wave-effect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 209, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.wave-effect:hover::after {
+    width: 300px;
+    height: 300px;
+}
+
+/* Gradiente animado de fundo */
+.animated-gradient {
+    background: linear-gradient(270deg, #0a0f1d, #111827, #0a0f1d);
+    background-size: 600% 600%;
+    animation: gradientShift 10s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Pulse suave para elementos importantes */
+.pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.9;
+    }
+}
+
+/* Efeito de spotlight */
+.spotlight {
+    position: relative;
+}
+
+.spotlight::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 209, 255, 0.2) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity var(--transition-slow);
+    pointer-events: none;
+}
+
+.spotlight:hover::before {
+    opacity: 1;
+}

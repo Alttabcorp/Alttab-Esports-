@@ -5,6 +5,7 @@
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh; /* Dynamic Viewport Height para mobile */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,16 +13,27 @@
     padding-top: var(--header-height);
 }
 
-/* Background */
+/* Background - Usa tag img para melhor responsividade */
 .hero-background {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('../images/hero/hero-background.jpg') center/cover no-repeat;
-    background-attachment: fixed;
+    object-fit: cover;
+    object-position: center;
     z-index: 1;
+    filter: brightness(1.2) contrast(1.1) saturate(1.1);
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Fallback caso a imagem não carregue */
+.hero-background:not([src]),
+.hero-background[src=""],
+.hero-background[src*="undefined"] {
+    background: linear-gradient(135deg, #0a0f1d 0%, #111827 50%, #0a0f1d 100%);
 }
 
 .hero-overlay {
@@ -30,8 +42,62 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient-overlay);
+    background: linear-gradient(
+        135deg,
+        rgba(10, 15, 29, 0.85) 0%,
+        rgba(10, 15, 29, 0.75) 50%,
+        rgba(10, 15, 29, 0.85) 100%
+    );
     z-index: 2;
+}
+
+/* Pattern overlay para visual profissional */
+.hero-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(0, 209, 255, 0.05) 2px,
+            rgba(0, 209, 255, 0.05) 4px
+        );
+    z-index: 2;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: shimmer 20s linear infinite;
+}
+
+/* Brasão decorativo no hero */
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 400px;
+    height: 400px;
+    background-image: url('../images/icons/brasao1_semfundo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.08;
+    z-index: 2;
+    pointer-events: none;
+    animation: float 8s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .hero::after {
+        width: 250px;
+        height: 250px;
+        bottom: 15%;
+        right: -50px;
+        opacity: 0.05;
+    }
 }
 
 /* Conteúdo */
@@ -41,11 +107,26 @@
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
     animation: fadeIn 0.8s ease-out;
 }
 
 .hero-slogan {
     margin-bottom: var(--spacing-2xl);
+    position: relative;
+}
+
+/* Linha decorativa sutil acima do título */
+.hero-slogan::before {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: var(--gradient-accent);
+    margin: 0 auto var(--spacing-lg);
+    border-radius: 2px;
+    box-shadow: var(--shadow-glow);
+    animation: scaleIn 0.6s ease-out;
 }
 
 .hero-small-text {
@@ -57,6 +138,7 @@
     font-weight: var(--font-weight-semibold);
     margin-bottom: var(--spacing-md);
     animation: fadeIn 0.8s ease-out;
+    text-shadow: 0 2px 10px rgba(0, 209, 255, 0.5);
 }
 
 .hero-title {
@@ -65,20 +147,26 @@
     margin-bottom: var(--spacing-lg);
     line-height: 1.2;
     color: var(--color-white);
-    animation: fadeIn 1s ease-out;
+    animation: slideUp 1s ease-out;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.9), 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 40px rgba(0, 209, 255, 0.3);
+    position: relative;
 }
 
 .hero-subtitle {
     font-size: var(--font-size-lg);
-    color: var(--color-gray);
+    color: var(--color-gray-light);
     margin-bottom: var(--spacing-2xl);
     animation: fadeIn 1.2s ease-out;
-    line-height: 1.6;
+    line-height: 1.8;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Badges */
+/* Badges - Visual profissional */
 .hero-badges {
     display: flex;
     align-items: center;
@@ -89,13 +177,27 @@
     animation: fadeIn 1.4s ease-out;
 }
 
+.hero-badges .badge {
+    background: rgba(0, 209, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 209, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all var(--transition-smooth);
+}
+
+.hero-badges .badge:hover {
+    background: rgba(0, 209, 255, 0.25);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: var(--shadow-glow);
+}
+
 /* Botões */
 .hero-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: var(--spacing-lg);
-    animation: fadeIn 1.6s ease-out;
+    animation: slideUp 1.6s ease-out;
 }
 
 /* Wave Divider */
@@ -120,7 +222,7 @@
     fill: var(--color-primary-dark);
 }
 
-/* Responsividade */
+/* Media Queries - Responsividade aprimorada */
 @media (max-width: 768px) {
     .hero {
         min-height: 100vh;
@@ -128,25 +230,38 @@
     }
     
     .hero-background {
-        background-attachment: scroll;
+        object-fit: cover;
+        object-position: center;
+        filter: brightness(1.05) contrast(1.15);
+    }
+    
+    .hero-content {
+        padding: 0 var(--spacing-md);
     }
     
     .hero-title {
-        font-size: var(--font-size-4xl);
+        font-size: var(--font-size-3xl);
     }
     
     .hero-subtitle {
-        font-size: var(--font-size-lg);
+        font-size: var(--font-size-base);
     }
     
     .hero-badges {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        gap: var(--spacing-sm);
+        flex-wrap: wrap;
+    }
+    
+    .hero-badges .badge {
+        font-size: var(--font-size-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
     
     .hero-buttons {
         flex-direction: column;
         width: 100%;
+        gap: var(--spacing-md);
     }
     
     .hero-buttons .btn {
@@ -155,5 +270,93 @@
     
     .wave-divider svg {
         height: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-background {
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-sm);
+    }
+    
+    .hero-small-text {
+        font-size: var(--font-size-xs);
+        letter-spacing: 2px;
+    }
+    
+    .hero-badges {
+        gap: var(--spacing-xs);
+    }
+    
+    .wave-divider svg {
+        height: 40px;
+    }
+}
+
+/* Mobile Landscape - ajustes específicos */
+@media (max-width: 896px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-top: calc(var(--header-height-mobile) * 0.8);
+    }
+    
+    .hero-content {
+        padding: var(--spacing-md);
+    }
+    
+    .hero-slogan {
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-sm);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-badges {
+        gap: var(--spacing-xs);
+        margin-bottom: var(--spacing-md);
+    }
+    
+    .hero-buttons {
+        flex-direction: row;
+        gap: var(--spacing-sm);
+    }
+    
+    .hero-buttons .btn {
+        width: auto;
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    .wave-divider svg {
+        height: 30px;
+    }
+}
+
+/* Suporte para notch em iPhones */
+@supports (padding: max(0px)) {
+    .hero {
+        padding-left: max(0px, env(safe-area-inset-left));
+        padding-right: max(0px, env(safe-area-inset-right));
+    }
+    
+    .hero-content {
+        padding-left: max(var(--spacing-lg), env(safe-area-inset-left));
+        padding-right: max(var(--spacing-lg), env(safe-area-inset-right));
     }
 }

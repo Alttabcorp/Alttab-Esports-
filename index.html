@@ -56,7 +56,10 @@
     <title>Alttab E-Sports Team | Time Competitivo</title>
     
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/icons/brasao1_semfundo32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/images/icons/brasao1_semfundo16x16.png">
+    <link rel="shortcut icon" href="assets/images/icons/brasao1_semfundo32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/icons/brasao1_semfundo.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -70,6 +73,8 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/variables.css">
     <link rel="stylesheet" href="assets/css/global.css">
+    <link rel="stylesheet" href="assets/css/decorative-effects.css">
+    <link rel="stylesheet" href="assets/css/brasao-effects.css">
     <link rel="stylesheet" href="assets/css/header.css">
     <link rel="stylesheet" href="assets/css/hero.css">
     <link rel="stylesheet" href="assets/css/timeline.css">
@@ -90,7 +95,6 @@
             <div class="header-content">
                 <a href="#hero" class="logo-link">
                     <img src="assets/images/logo/alttab-esports-logo.png" alt="Alttab E-Sports Logo" class="logo">
-                    <span class="logo-text">Alttab E-Sports</span>
                 </a>
                 
                 <nav class="nav">
@@ -115,8 +119,14 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-background"></div>
+        <img src="assets/images/hero/hero-background.jpg" 
+             alt="Hero Background" 
+             class="hero-background" 
+             loading="eager"
+             decoding="async"
+             onerror="this.style.background='linear-gradient(135deg, #0a0e1a 0%, #1a1f35 50%, #0a0e1a 100%)'; this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%221920%22 height=%221080%22%3E%3Crect fill=%22%230a0e1a%22 width=%221920%22 height=%221080%22/%3E%3C/svg%3E';" >
         <div class="hero-overlay"></div>
+        <div class="hero-pattern"></div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-slogan">
@@ -135,13 +145,6 @@
                 </div>
             </div>
         </div>
-        <div class="wave-divider">
-            <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="wave-fill"></path>
-                <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="wave-fill"></path>
-                <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="wave-fill"></path>
-            </svg>
-        </div>
     </section>
 
     <!-- Sobre o Time + Parceiros -->
@@ -158,16 +161,13 @@
                 </div>
                 
                 <!-- Parceiro Institucional -->
-                <div style="text-align: center; margin-top: var(--spacing-2xl); padding-top: var(--spacing-2xl); border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                    <p style="color: var(--color-gray); margin-bottom: var(--spacing-md); font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 2px;">
+                <div class="institutional-support">
+                    <p class="institutional-label">
                         <strong>Apoio Institucional</strong>
                     </p>
                     <img src="assets/images/logo/alttab-corp-logo.png" 
                          alt="Alttab Corp" 
-                         style="width: 120px; height: auto; opacity: 0.8; transition: opacity 0.3s ease;"
-                         onerror="this.style.display='none'"
-                         onmouseover="this.style.opacity='1'"
-                         onmouseout="this.style.opacity='0.8'">
+                         class="institutional-logo">
                 </div>
             </div>
         </div>
@@ -202,7 +202,7 @@
                 <div class="lineup-grid">
                     <div class="player-card animate-on-scroll">
                         <div class="player-avatar">
-                            <img src="assets/images/players/avatar-zephyr.png" alt="Avatar Zephyr" onerror="this.src='assets/images/players/avatar-default.png'">
+                            <img src="assets/images/players/avatar-zephyr.png" alt="Avatar Zephyr" onerror="this.src='assets/images/decorative/placeholder.svg'">
                         </div>
                         <div class="player-info">
                             <h3 class="player-nickname">Zephyr</h3>
@@ -212,7 +212,7 @@
                     
                     <div class="player-card animate-on-scroll">
                         <div class="player-avatar">
-                            <img src="assets/images/players/avatar-pyro.png" alt="Avatar Pyro" onerror="this.src='assets/images/players/avatar-default.png'">
+                            <img src="assets/images/players/avatar-pyro.png" alt="Avatar Pyro" onerror="this.src='assets/images/decorative/placeholder.svg'">
                         </div>
                         <div class="player-info">
                             <h3 class="player-nickname">Pyro</h3>
@@ -222,7 +222,7 @@
                     
                     <div class="player-card animate-on-scroll">
                         <div class="player-avatar">
-                            <img src="assets/images/players/avatar-cipher.png" alt="Avatar Cipher" onerror="this.src='assets/images/players/avatar-default.png'">
+                            <img src="assets/images/players/avatar-cipher.png" alt="Avatar Cipher" onerror="this.src='assets/images/decorative/placeholder.svg'">
                         </div>
                         <div class="player-info">
                             <h3 class="player-nickname">Cipher</h3>
@@ -232,7 +232,7 @@
                     
                     <div class="player-card animate-on-scroll">
                         <div class="player-avatar">
-                            <img src="assets/images/players/avatar-vortex.png" alt="Avatar Vortex" onerror="this.src='assets/images/players/avatar-default.png'">
+                            <img src="assets/images/players/avatar-vortex.png" alt="Avatar Vortex" onerror="this.src='assets/images/decorative/placeholder.svg'">
                         </div>
                         <div class="player-info">
                             <h3 class="player-nickname">Vortex</h3>
@@ -242,7 +242,7 @@
                     
                     <div class="player-card animate-on-scroll">
                         <div class="player-avatar">
-                            <img src="assets/images/players/avatar-aurora.png" alt="Avatar Aurora" onerror="this.src='assets/images/players/avatar-default.png'">
+                            <img src="assets/images/players/avatar-aurora.png" alt="Avatar Aurora" onerror="this.src='assets/images/decorative/placeholder.svg'">
                         </div>
                         <div class="player-info">
                             <h3 class="player-nickname">Aurora</h3>
@@ -284,22 +284,22 @@
                 <div class="carousel-container">
                     <!-- Slide 1 -->
                     <div class="carousel-slide active">
-                        <img src="assets/images/uniforms/uniform-1.png" alt="Uniforme Principal" onerror="this.src='assets/images/decorative/placeholder.png'">
+                        <img src="assets/images/uniforms/uniform-1.png" alt="Uniforme Principal" onerror="this.src='assets/images/decorative/placeholder.svg'">
                     </div>
                     
                     <!-- Slide 2 -->
                     <div class="carousel-slide">
-                        <img src="assets/images/uniforms/uniform-2.png" alt="Uniforme Alternativo" onerror="this.src='assets/images/decorative/placeholder.png'">
+                        <img src="assets/images/uniforms/uniform-2.png" alt="Uniforme Alternativo" onerror="this.src='assets/images/decorative/placeholder.svg'">
                     </div>
                     
                     <!-- Slide 3 -->
                     <div class="carousel-slide">
-                        <img src="assets/images/uniforms/uniform-3.png" alt="Uniforme Treino" onerror="this.src='assets/images/decorative/placeholder.png'">
+                        <img src="assets/images/uniforms/uniform-3.png" alt="Uniforme Treino" onerror="this.src='assets/images/decorative/placeholder.svg'">
                     </div>
                     
                     <!-- Slide 4 -->
                     <div class="carousel-slide">
-                        <img src="assets/images/uniforms/jacket.png" alt="Jaqueta do Time" onerror="this.src='assets/images/decorative/placeholder.png'">
+                        <img src="assets/images/uniforms/jacket.png" alt="Jaqueta do Time" onerror="this.src='assets/images/decorative/placeholder.svg'">
                     </div>
                 </div>
                 
@@ -375,7 +375,7 @@
             
             <div class="footer-content" style="display: grid; grid-template-columns: 2fr 1fr 1fr; gap: var(--spacing-2xl); margin-bottom: var(--spacing-xl); padding: var(--spacing-2xl) var(--spacing-xl);">
                 <div class="footer-brand">
-                    <img src="assets/images/logo/alttab-esports-logo.png" alt="Alttab E-Sports Logo" class="footer-logo" onerror="this.style.display='none'">
+                    <img src="assets/images/logo/alttab-esports-logo.png" alt="Alttab E-Sports Logo" class="footer-logo">
                     <h3>Alttab E-Sports Team</h3>
                     <p>Time competitivo focado em excelência técnica, disciplina estratégica e crescimento contínuo no cenário de e-sports.</p>
                     <div class="footer-location">
